@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LocalStorageService} from '../shared/services/local-storage.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  userName = 'Guest';
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private localStorageService: LocalStorageService) {
   }
 
+  ngOnInit() {
+    if (this.localStorageService.getUserName()) {
+      this.userName = this.localStorageService.getUserName();
+    }
+  }
 }

@@ -1,8 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LocalStorageService {
   setRegitrationData(data) {
     localStorage.setItem('isLogin', JSON.stringify(data));
@@ -19,8 +17,17 @@ export class LocalStorageService {
   isUserLogin() {
     if (this.getLocalData('isLogin') === null) {
       this.setRegitrationData({'isLogin': false});
+      this.setRegitrationData({'userName': 'Guest'});
       return false;
     }
     return this.getLocalData('isLogin').isLogin;
+  }
+
+  getUserName() {
+    return JSON.parse(localStorage.getItem(`userName`));
+  }
+
+  setUserName(data) {
+    localStorage.setItem('userName', JSON.stringify(data));
   }
 }

@@ -13,6 +13,7 @@ import {SharedModule} from './shared/shared.module';
 import {LoginModule} from './core/login/login.module';
 import {RegistrationModule} from './core/registration/registration.module';
 import {HeaderModule} from './header/header.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {HeaderModule} from './header/header.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
     HomeModule,

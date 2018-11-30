@@ -14,6 +14,6 @@ export class HeaderComponent {
 
   logOut() {
     this.localStorageService.setRegitrationData({'isLogin': false});
-    this.route.navigate(['/core/login']);
+    this.route.navigate(['/core/registration']);
   }
 }
