@@ -6,6 +6,7 @@ import { FormsComponent } from './forms.component';
   declarations: [FormsComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [FormsComponent]
 })
 export class FormsModule { }

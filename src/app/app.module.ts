@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {AuthGuard} from './core/guards/auth.guard';
 import {LocalStorageService} from './shared/services/local-storage.service';
 import {CoreModule} from './core/core.module';
@@ -12,6 +12,7 @@ import {FormsModule} from './forms/forms.module';
 import {SharedModule} from './shared/shared.module';
 import {LoginModule} from './core/login/login.module';
 import {RegistrationModule} from './core/registration/registration.module';
+import {HeaderModule} from './header/header.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {RegistrationModule} from './core/registration/registration.module';
     CoreModule,
     HomeModule,
     MenuModule,
+    HeaderModule,
     FormsModule,
     SharedModule,
     LoginModule,
@@ -34,4 +36,5 @@ import {RegistrationModule} from './core/registration/registration.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

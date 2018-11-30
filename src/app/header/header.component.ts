@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {LocalStorageService} from '../shared/services/local-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class HeaderComponent {
+  constructor(private localStorageService: LocalStorageService,
+              private route: Router) {
   }
 
+  logOut() {
+    this.localStorageService.setRegitrationData({'isLogin': false});
+    this.route.navigate(['/core/login']);
+  }
 }
