@@ -1,0 +1,16 @@
+.wrapper {
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .image-block {
+    height: 50%;
+    width: 50%;
+    background: aqua;
+  }
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
