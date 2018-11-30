@@ -13,7 +13,7 @@ export class HeaderComponent {
   }
 
   logOut() {
-    this.localStorageService.setRegitrationData({'isLogin': false});
+    this.localStorageService.logOut('Guest');
     this.route.navigate(['/core/registration']);
   }
 }

@@ -12,9 +12,11 @@ export class MenuComponent implements OnInit {
   constructor(private localStorageService: LocalStorageService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.localStorageService.getUserName()) {
       this.userName = this.localStorageService.getUserName();
     }
+    console.log(this.localStorageService.getUserName());
+    this.localStorageService.dataSource$.subscribe(value => this.userName = value);
   }
 }

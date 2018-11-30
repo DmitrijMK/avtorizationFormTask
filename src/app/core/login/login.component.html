@@ -31,10 +31,12 @@
   <button mat-raised-button
           color="primary"
           [disabled]="loginForm.invalid"
-  >{{ loginForm.invalid ? 'Введите данные' : 'Войти'}}</button>
+  >{{ loginForm.invalid ? 'Введите данные' : 'Войти'}}
+  </button>
 </form>
 
 <button (click)="navigateToRegistration()"
         mat-button
         class="is_login"
-        color="primary">Еще нет аккаунта?</button>
+        color="primary">Еще нет аккаунта?
+</button>

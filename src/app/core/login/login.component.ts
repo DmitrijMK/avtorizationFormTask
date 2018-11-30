@@ -26,9 +26,8 @@ export class LoginComponent implements OnInit {
   authorization(data) {
     const authData = this.localStorageService.getLocalData(data['login']);
     if (authData.passWord === data.passWord) {
-      this.localStorageService.setRegitrationData({'isLogin': true});
-      this.localStorageService.setUserName(data.login);
-      console.log(data.login);
+      this.localStorageService.logIn(data.login);
+
       this.route.navigate(['']);
     }
   }
